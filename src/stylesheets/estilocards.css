@@ -1,0 +1,109 @@
+.cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #1e2536;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card__header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  object-fit: contain;  /* 👈 agrega esto */
+}
+.card__nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.card__descripcion {
+  font-size: 19px;
+  color: #a0aec0;
+  line-height: 1.4;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__remove {
+  padding: 6px 14px;
+  border: 1px solid #2a3148;
+  border-radius: 20px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.2s ease;
+}
+
+.card__remove:hover {
+  background-color: #2a3148;
+}
+
+/* ── Toggle ── */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle__slider {
+  position: absolute;
+  inset: 0;
+  background-color: #2a3148;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle__slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 3px;
+  top: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle input:checked + .toggle__slider {
+  background-color: #e05a4e;
+}
+
+.toggle input:checked + .toggle__slider::before {
+  transform: translateX(22px);
+}
